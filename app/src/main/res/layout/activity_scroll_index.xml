@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scroll.ScrollIndexActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/outSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="外部拦截法" />
+
+        <Button
+            android:id="@+id/inSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="内部拦截发" />
+
+
+        <include
+            android:id="@+id/outSideLayout"
+            layout="@layout/out_side_scroll"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
