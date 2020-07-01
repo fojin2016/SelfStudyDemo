@@ -1,9 +1,11 @@
 package com.lfj.selfstudydemo.scroll
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lfj.selfstudydemo.R
+import kotlinx.android.synthetic.main.activity_scroll_index.*
 import kotlinx.android.synthetic.main.out_side_scroll.*
 
 class ScrollIndexActivity : AppCompatActivity() {
@@ -12,6 +14,8 @@ class ScrollIndexActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scroll_index)
         initUI()
+
+        eleme.setOnClickListener { startActivity(Intent(this, ElemeScrollActivity::class.java)) }
     }
 
 

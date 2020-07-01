@@ -13,17 +13,10 @@
 
 
         <Button
-            android:id="@+id/outSide"
+            android:id="@+id/eleme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="外部拦截法" />
-
-        <Button
-            android:id="@+id/inSide"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="内部拦截发" />
-
+            android:text="饿了么商家详情页"/>
 
         <include
             android:id="@+id/outSideLayout"
