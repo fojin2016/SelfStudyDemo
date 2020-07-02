@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.View
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
+import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
 import com.lfj.selfstudydemo.scroll.ScrollIndexActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,9 +20,22 @@ class MainActivity : BaseActivity() {
         nestedScroll.setOnClickListener {
             startActivity(Intent(this, ScrollIndexActivity::class.java))
         }
-        activityMvvM.setOnClickListener {
-            startActivity(Intent(this, NewDetailActivity::class.java))
+
+        GlobalUtil.setOnClickListener(activityMvvM, nestedScroll, kaiyan) {
+            when (this) {
+
+                activityMvvM -> {
+                    startActivity(Intent(activity, NewDetailActivity::class.java))
+                }
+
+                kaiyan -> {
+                    startActivity(Intent(activity, KaiYanMainActivity::class.java))
+                }
+
+
+            }
         }
+
     }
 
 

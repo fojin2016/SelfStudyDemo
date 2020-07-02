@@ -28,6 +28,12 @@
                 android:onClick="ActivityMvvM"
                 />
 
+            <Button
+                android:id="@+id/kaiyan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="开眼App"
+                />
 
         </LinearLayout>
 

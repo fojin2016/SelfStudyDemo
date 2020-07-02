@@ -28,6 +28,7 @@ import android.os.Build
 import android.provider.Settings
 import android.provider.Settings.Secure.putString
 import android.text.TextUtils
+import android.view.View
 import androidx.core.content.edit
 import com.lfj.selfstudydemo.App
 import com.lfj.selfstudydemo.Yr
@@ -250,4 +251,15 @@ object GlobalUtil {
      * 判断手机是否安装了微博。
      * */
     fun isWeiboInstalled() = isInstalled("com.sina.weibo")
+
+    /**
+     * 批量设置控件点击事件。
+     *
+     * @param v 点击的控件
+     * @param block 处理点击事件回调代码块
+     */
+    fun setOnClickListener(vararg v: View?, block: View.() -> Unit) {
+        val listener = View.OnClickListener { it.block() }
+        v.forEach { it?.setOnClickListener(listener) }
+    }
 }
