@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2e2e2e2"
+    tools:context=".ybehavior.mimusic.MiMusicBehaviorActivity">
+
+    <!--face部分-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_behavior=".ybehavior.mimusic.behavior.FaceBehavior"
+        >
+
+        <ImageView
+            android:id="@+id/iv_face"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/jj"
+            android:tag="iv_face"
+            android:translationY="@dimen/face_trans_y" />
+
+        <View
+            android:id="@+id/v_mask"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
+    </FrameLayout>
+    <!--face部分 -->
+
+    <!--TopBar部分-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:layout_behavior=".ybehavior.mimusic.behavior.TopBarBehavior">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="0dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_top_bar_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_top_bar_name" />
+
+        <TextView
+            android:id="@+id/tv_top_bar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="厦门 集美区"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--TopBar部分-->
+
+
+    <!--TitleBar部分-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cls_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_behavior=".ybehavior.mimusic.behavior.TitleBarBehavior">
+
+
+        <LinearLayout
+            android:id="@+id/search_ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/shap_search_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/search_tv_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:gravity="center_vertical|center_horizontal"
+                android:hint="这是搜索框"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/ic_launcher" />
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--TitleBar部分-->
+
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:translationY="@dimen/content_trans_y"
+        app:layout_behavior=".ybehavior.mimusic.behavior.ContentBehavior">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/scrollViewIn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_splash"
+            />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

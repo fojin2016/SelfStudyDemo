@@ -76,5 +76,7 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     // tabLayout
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //CoordinatorLayout
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 
 }

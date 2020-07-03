@@ -7,6 +7,7 @@ import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
 import com.lfj.selfstudydemo.scroll.ScrollIndexActivity
+import com.lfj.selfstudydemo.ybehavior.BehaviorListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -18,7 +19,7 @@ class MainActivity : BaseActivity() {
 
     override fun initUI() {
 
-        GlobalUtil.setOnClickListener(activityMvvM, nestedScroll, kaiyan, jingdongTop) {
+        GlobalUtil.setOnClickListener(activityMvvM, nestedScroll, kaiyan, jingdongTop, behavior) {
             when (this) {
 
                 activityMvvM -> {
@@ -35,6 +36,10 @@ class MainActivity : BaseActivity() {
 
                 jingdongTop -> {
                     startActivity(Intent(activity, JingDongTopActivity::class.java))
+                }
+
+                behavior -> {
+                    startActivity(Intent(activity, BehaviorListActivity::class.java))
                 }
 
             }

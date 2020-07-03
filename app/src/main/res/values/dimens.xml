@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="face_trans_y">-12dp</dimen>
+
+
+    <dimen name="content_trans_y">80dp</dimen>
+
+    <dimen name="content_trans_down_end_y">80dp</dimen>
+
+    <dimen name="top_bar_height">40dp</dimen>
+</resources>

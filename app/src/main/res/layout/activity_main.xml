@@ -42,6 +42,12 @@
                 android:text="京东顶部搜索滑动伸缩"
                 />
 
+            <Button
+                android:id="@+id/behavior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Behavior可伸缩"
+                ></Button>
         </LinearLayout>
 
 
