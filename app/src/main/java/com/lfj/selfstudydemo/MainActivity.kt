@@ -3,6 +3,7 @@ package com.lfj.selfstudydemo
 import android.content.Intent
 import android.view.View
 import com.lfj.selfstudydemo.activity.NewDetailActivity
+import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
 import com.lfj.selfstudydemo.scroll.ScrollIndexActivity
@@ -17,11 +18,7 @@ class MainActivity : BaseActivity() {
 
     override fun initUI() {
 
-        nestedScroll.setOnClickListener {
-            startActivity(Intent(this, ScrollIndexActivity::class.java))
-        }
-
-        GlobalUtil.setOnClickListener(activityMvvM, nestedScroll, kaiyan) {
+        GlobalUtil.setOnClickListener(activityMvvM, nestedScroll, kaiyan, jingdongTop) {
             when (this) {
 
                 activityMvvM -> {
@@ -32,6 +29,13 @@ class MainActivity : BaseActivity() {
                     startActivity(Intent(activity, KaiYanMainActivity::class.java))
                 }
 
+                nestedScroll -> {
+                    startActivity(Intent(activity, ScrollIndexActivity::class.java))
+                }
+
+                jingdongTop -> {
+                    startActivity(Intent(activity, JingDongTopActivity::class.java))
+                }
 
             }
         }

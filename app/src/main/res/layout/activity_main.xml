@@ -35,6 +35,13 @@
                 android:text="开眼App"
                 />
 
+            <Button
+                android:id="@+id/jingdongTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="京东顶部搜索滑动伸缩"
+                />
+
         </LinearLayout>
 
 
