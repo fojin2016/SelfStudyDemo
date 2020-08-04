@@ -33,7 +33,7 @@ class AnimationNestedScrollView :NestedScrollView {
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
         super.onScrollChanged(l, t, oldl, oldt)
 
-        listener?.onScrollChanged(scrollY*0365f) //x0.65 使位移效果更加平滑 解决手指按住停留时抖动问题
+        listener?.onScrollChanged(scrollY*0.65f) //x0.65 使位移效果更加平滑 解决手指按住停留时抖动问题
     }
 
     interface OnAnimationScrollChangeListener {

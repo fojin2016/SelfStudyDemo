@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_behavior=".ybehavior.mimusic.behavior.FaceBehavior"
-        >
+        app:layout_behavior=".ybehavior.mimusic.behavior.FaceBehavior">
 
         <ImageView
             android:id="@+id/iv_face"
@@ -37,6 +36,7 @@
         android:id="@+id/cl_top_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_bar_height"
+        android:visibility="gone"
         app:layout_behavior=".ybehavior.mimusic.behavior.TopBarBehavior">
 
 
@@ -70,24 +70,47 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cls_title_bar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
         app:layout_behavior=".ybehavior.mimusic.behavior.TitleBarBehavior">
+
+
+        <LinearLayout
+            android:id="@+id/search_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@+id/search_ll_search">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="16dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22222"
+                />
+
+        </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/search_ll_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="40dp"
             android:background="@drawable/shap_search_white"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
                 android:layout_width="16dp"
@@ -116,7 +139,6 @@
         </LinearLayout>
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--TitleBar部分-->
 
@@ -134,8 +156,7 @@
             android:id="@+id/scrollViewIn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@mipmap/bg_splash"
-            />
+            android:background="@mipmap/bg_splash" />
 
     </LinearLayout>
 

@@ -15,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ybehavior.mimusic.MiMusicBehaviorActivity"
-            android:theme="@style/Fullscreen"
-            ></activity>
+        <activity android:name=".secondList.SecondRecyclerActivity"></activity>
+        <activity android:name=".appbar.AppBarLayoutActivity" />
+        <activity
+            android:name=".ybehavior.mimusic.MiMusicBehaviorActivity"
+            android:theme="@style/Fullscreen" />
         <activity android:name=".ybehavior.BehaviorListActivity" />
         <activity android:name=".jingdongTop.JingDongTopActivity" />
         <activity

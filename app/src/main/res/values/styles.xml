@@ -14,5 +14,9 @@
         <item name="android:windowFullscreen">true</item>
 
     </style>
-    
+
+
+    <!-- 条形进度条 -->
+
+
 </resources>

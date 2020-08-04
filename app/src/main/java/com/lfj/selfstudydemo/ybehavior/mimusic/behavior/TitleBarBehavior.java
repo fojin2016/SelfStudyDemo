@@ -51,10 +51,17 @@ public class TitleBarBehavior extends CoordinatorLayout.Behavior {
         float start = (contentTransY + topBarHeight) / 2;
         float upPro = (contentTransY - MathUtils.clamp(dependency.getTranslationY(), start, contentTransY)) / (contentTransY - start);
 //        child.setAlpha(1 - upPro);
-        Yr.d(start,upPro);
-        int padoff= (int) (20*upPro);
-        child.setPadding(padoff,0,padoff,0);
+            changChildView(child,upPro);
         return true;
+    }
+
+
+    private void  changChildView(View child,float upPro){
+
+        View searchView = child.findViewById(R.id.search_ll_search);
+        int padoff= (int) (20*upPro);
+        searchView.setPadding(padoff,0,padoff,0);
+
     }
 
     @Override
