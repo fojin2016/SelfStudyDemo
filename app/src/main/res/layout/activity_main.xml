@@ -90,10 +90,23 @@
                 android:paddingRight="@dimen/dp_10"
                 android:progress="50"
                 />
+            <Button
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webView"
+                />
+            <Button
+                android:id="@+id/DatePick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DatePick"/>
 
-
-
-
+            <Button
+                android:id="@+id/toMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="调起第三方信息"/>
         </LinearLayout>
 
 

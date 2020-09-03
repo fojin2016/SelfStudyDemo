@@ -5,10 +5,12 @@ import android.view.View
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
+import com.lfj.selfstudydemo.map.ThirdMapActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
 import com.lfj.selfstudydemo.scroll.ScrollIndexActivity
 import com.lfj.selfstudydemo.secondList.SecondRecyclerActivity
+import com.lfj.selfstudydemo.webview.WebViewActivity
 import com.lfj.selfstudydemo.ybehavior.BehaviorListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,7 +30,7 @@ class MainActivity : BaseActivity() {
             jingdongTop,
             behavior,
             appbarLayout,
-            secondRecycler
+            secondRecycler, webView, DatePick, toMap
         ) {
             when (this) {
 
@@ -52,10 +54,19 @@ class MainActivity : BaseActivity() {
                     startActivity(Intent(activity, BehaviorListActivity::class.java))
                 }
                 appbarLayout -> {
-                    startActivity(Intent(activity,AppBarLayoutActivity::class.java))
+                    startActivity(Intent(activity, AppBarLayoutActivity::class.java))
                 }
-                secondRecycler ->{
-                    startActivity(Intent(activity,SecondRecyclerActivity::class.java))
+                secondRecycler -> {
+                    startActivity(Intent(activity, SecondRecyclerActivity::class.java))
+                }
+                webView -> {
+                    startActivity(Intent(activity, WebViewActivity::class.java))
+                }
+                DatePick -> {
+                    startActivity(Intent(activity, DatePickActivity::class.java))
+                }
+                toMap -> {
+                    startActivity(Intent(activity, ThirdMapActivity::class.java))
                 }
             }
         }
