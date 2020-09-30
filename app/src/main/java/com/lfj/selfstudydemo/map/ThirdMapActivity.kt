@@ -39,6 +39,8 @@ class ThirdMapActivity : BaseActivity() {
                     if (MapUtil.isTencentMapInstalled()) {
                         MapUtil.openTencentMap(activity, 0.0, 0.0, null, latx, laty, mAddress);
                     } else {
+
+
                         //这里必须要写逻辑，不然如果手机没安装该应用，程序会闪退，这里可以实现下载安装该地图应用
                         Toast.makeText(activity, "尚未安装腾讯地图", Toast.LENGTH_SHORT).show()
                     }

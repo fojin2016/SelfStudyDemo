@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/baidu_map"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/llEdit"
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="高德地图"/>
 
@@ -73,5 +73,29 @@
         app:layout_constraintBottom_toTopOf="@id/tencent_map"
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="谷歌地图"/>
+
+    <LinearLayout
+        android:id="@+id/llEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:paddingBottom="4dp"
+            android:background="@null"
+            android:text="asdhahdiahdaidh"
+            android:hint="请输入"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@mipmap/ic_launcher"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
