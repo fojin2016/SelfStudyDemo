@@ -2,6 +2,8 @@ package com.lfj.selfstudydemo
 
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
@@ -70,7 +72,10 @@ class MainActivity : BaseActivity() {
                 }
             }
         }
-
+        lambdaView.setOnclick {
+            Yr.d("123456")
+            Snackbar.make(it,"点击我",Snackbar.LENGTH_SHORT).show()
+        }
     }
 
 
