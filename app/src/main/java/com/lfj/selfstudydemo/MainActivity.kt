@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
+import com.lfj.selfstudydemo.aroute.RouterActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
 import com.lfj.selfstudydemo.map.ThirdMapActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
@@ -32,7 +33,7 @@ class MainActivity : BaseActivity() {
             jingdongTop,
             behavior,
             appbarLayout,
-            secondRecycler, webView, DatePick, toMap
+            secondRecycler, webView, DatePick, toMap, Route
         ) {
             when (this) {
 
@@ -70,11 +71,14 @@ class MainActivity : BaseActivity() {
                 toMap -> {
                     startActivity(Intent(activity, ThirdMapActivity::class.java))
                 }
+                Route -> {
+                    startActivity(Intent(activity, RouterActivity::class.java))
+                }
             }
         }
         lambdaView.setOnclick {
             Yr.d("123456")
-            Snackbar.make(it,"点击我",Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(it, "点击我", Snackbar.LENGTH_SHORT).show()
         }
     }
 

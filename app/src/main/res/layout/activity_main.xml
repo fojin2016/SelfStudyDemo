@@ -111,8 +111,14 @@
             <com.lfj.selfstudydemo.lambda.LambdaView
                 android:id="@+id/lambdaView"
                 android:layout_width="100dp"
+                android:visibility="gone"
                 android:layout_height="100dp"/>
-
+            <Button
+                android:id="@+id/Route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="阿里Route"
+                />
         </LinearLayout>
 
 
