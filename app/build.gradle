@@ -11,8 +11,8 @@ kapt {
     }
 }
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion target_sdk_version
+    buildToolsVersion buildToolsVersion
 
     defaultConfig {
         applicationId "com.lfj.selfstudydemo"
@@ -60,6 +60,7 @@ dependencies {
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation project(path: ':textArouter')
+//    implementation project(path: ':common')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
