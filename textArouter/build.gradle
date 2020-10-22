@@ -10,8 +10,8 @@ kapt {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion target_sdk_version
+    buildToolsVersion build_tools_version
 
     defaultConfig {
         minSdkVersion 16
