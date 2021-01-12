@@ -1,13 +1,13 @@
 package com.lfj.selfstudydemo
 
 import android.content.Intent
-import android.view.View
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
 import com.lfj.selfstudydemo.aroute.RouterActivity
+import com.lfj.selfstudydemo.diffUtil.DiffActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
+import com.lfj.selfstudydemo.layoutmanager.PathLayoutManagerActivity
 import com.lfj.selfstudydemo.map.ThirdMapActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
@@ -33,7 +33,7 @@ class MainActivity : BaseActivity() {
             jingdongTop,
             behavior,
             appbarLayout,
-            secondRecycler, webView, DatePick, toMap, Route
+            secondRecycler, webView, DatePick, toMap, Route, DiffUtils, layoutManager
         ) {
             when (this) {
 
@@ -73,6 +73,12 @@ class MainActivity : BaseActivity() {
                 }
                 Route -> {
                     startActivity(Intent(activity, RouterActivity::class.java))
+                }
+                DiffUtils -> {
+                    startActivity(Intent(activity, DiffActivity::class.java))
+                }
+                layoutManager -> {
+                    startActivity(Intent(activity, PathLayoutManagerActivity::class.java))
                 }
             }
         }

@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".aroute.RouterTextActivity"></activity>
+        <activity android:name=".layoutmanager.PathLayoutManagerActivity"></activity>
+        <activity android:name=".diffUtil.DiffActivity" />
+        <activity android:name=".aroute.RouterTextActivity" />
         <activity android:name=".aroute.RouterActivity" />
         <activity android:name=".map.ThirdMapActivity" />
         <activity android:name=".DatePickActivity" />

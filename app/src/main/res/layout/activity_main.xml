@@ -119,6 +119,17 @@
                 android:layout_height="wrap_content"
                 android:text="阿里Route"
                 />
+            <Button
+                android:id="@+id/DiffUtils"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recycler的DiffUtils"
+                />
+            <Button
+                android:id="@+id/layoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义LayoutManager"/>
         </LinearLayout>
 
 
