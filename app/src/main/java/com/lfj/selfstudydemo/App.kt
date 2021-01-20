@@ -23,7 +23,9 @@ class App : Application() {
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
-        MultiDex.install(this);
+        MultiDex.install(this)
+
+        Yr.init(this)
     }
 
 

@@ -25,6 +25,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initUI() {
+       var myActivityLauncher = registerForActivityResult(MyActivityResultContract()) {
+            Yr.toast("回传数据$it")
+        }
+
 
         GlobalUtil.setOnClickListener(
             activityMvvM,
@@ -33,7 +37,14 @@ class MainActivity : BaseActivity() {
             jingdongTop,
             behavior,
             appbarLayout,
-            secondRecycler, webView, DatePick, toMap, Route, DiffUtils, layoutManager
+            secondRecycler,
+            webView,
+            DatePick,
+            toMap,
+            Route,
+            DiffUtils,
+            layoutManager,
+            ResultLauncher
         ) {
             when (this) {
 
@@ -79,6 +90,10 @@ class MainActivity : BaseActivity() {
                 }
                 layoutManager -> {
                     startActivity(Intent(activity, PathLayoutManagerActivity::class.java))
+
+                }
+                ResultLauncher -> {
+                    myActivityLauncher.launch("主页数据")
                 }
             }
         }
