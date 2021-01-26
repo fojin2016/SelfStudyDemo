@@ -1,10 +1,13 @@
 package com.lfj.selfstudydemo
 
 import android.content.Intent
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
 import com.lfj.selfstudydemo.aroute.RouterActivity
+import com.lfj.selfstudydemo.coroutine.YoudaoViewModel
 import com.lfj.selfstudydemo.diffUtil.DiffActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
 import com.lfj.selfstudydemo.layoutmanager.PathLayoutManagerActivity
@@ -19,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
+    private val viewModel:YoudaoViewModel = YoudaoViewModel()
 
     override fun layoutView(): Int {
         return R.layout.activity_main
@@ -98,10 +102,19 @@ class MainActivity : BaseActivity() {
             }
         }
         lambdaView.setOnclick {
-            Yr.d("123456")
-            Snackbar.make(it, "点击我", Snackbar.LENGTH_SHORT).show()
+
+            viewModel.translate("你好！世界")
         }
+
+        viewModel._translateResult.observe(this, Observer {
+            Yr.d("123456")
+            Snackbar.make(lambdaView,it, Snackbar.LENGTH_SHORT).show()
+
+        })
     }
+
+
+
 
 
     override fun initData() {

@@ -60,6 +60,7 @@ dependencies {
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation project(path: ':textArouter')
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 //    implementation project(path: ':common')
 
     testImplementation 'junit:junit:4.12'
