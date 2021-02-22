@@ -24,7 +24,6 @@ class LambdaView : LinearLayout {
 
 
     }
-
     fun setOnclick(l: (View) -> Unit) {
         textLambda.setOnClickListener(l)
     }

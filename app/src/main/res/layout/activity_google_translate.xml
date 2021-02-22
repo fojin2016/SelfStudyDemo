@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".translate.GoogleTranslateActivity">
+
+
+    <EditText
+        android:id="@+id/edString"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="不要把时间、财力和劳动，浪费在空洞多余的话语上。永远以用心乐观的心态去拓展自我和身外的世界"
+        />
+
+    <Button
+        android:id="@+id/翻译"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="翻译"/>
+
+
+    <TextView
+        android:id="@+id/tvShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

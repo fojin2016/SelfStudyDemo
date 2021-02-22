@@ -2,7 +2,6 @@ package com.lfj.selfstudydemo
 
 import android.content.Intent
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
@@ -16,24 +15,25 @@ import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
 import com.lfj.selfstudydemo.scroll.ScrollIndexActivity
 import com.lfj.selfstudydemo.secondList.SecondRecyclerActivity
+import com.lfj.selfstudydemo.translate.GoogleTranslateActivity
 import com.lfj.selfstudydemo.webview.WebViewActivity
 import com.lfj.selfstudydemo.ybehavior.BehaviorListActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : BaseActivity() {
 
-    private val viewModel:YoudaoViewModel = YoudaoViewModel()
+    private val viewModel: YoudaoViewModel = YoudaoViewModel()
 
     override fun layoutView(): Int {
         return R.layout.activity_main
     }
-
+    val myFun1: (String) -> Unit = fun(value: String) { Yr.d(value) }
+    val myFun2: (String) -> Unit = { value -> Yr.d(value) }
     override fun initUI() {
-       var myActivityLauncher = registerForActivityResult(MyActivityResultContract()) {
+        var myActivityLauncher = registerForActivityResult(MyActivityResultContract()) {
             Yr.toast("回传数据$it")
         }
-
-
         GlobalUtil.setOnClickListener(
             activityMvvM,
             nestedScroll,
@@ -48,7 +48,8 @@ class MainActivity : BaseActivity() {
             Route,
             DiffUtils,
             layoutManager,
-            ResultLauncher
+            ResultLauncher,
+            googleTranslate
         ) {
             when (this) {
 
@@ -99,22 +100,22 @@ class MainActivity : BaseActivity() {
                 ResultLauncher -> {
                     myActivityLauncher.launch("主页数据")
                 }
+                googleTranslate -> {
+                    startActivity(Intent(activity, GoogleTranslateActivity::class.java))
+                }
             }
         }
         lambdaView.setOnclick {
-
             viewModel.translate("你好！世界")
         }
 
         viewModel._translateResult.observe(this, Observer {
             Yr.d("123456")
-            Snackbar.make(lambdaView,it, Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(lambdaView, it, Snackbar.LENGTH_SHORT).show()
 
         })
+        myFun2("skr")
     }
-
-
-
 
 
     override fun initData() {
