@@ -2,14 +2,17 @@ package com.lfj.selfstudydemo
 
 import android.content.Intent
 import androidx.lifecycle.Observer
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.lfj.selfstudydemo.activity.NewDetailActivity
 import com.lfj.selfstudydemo.appbar.AppBarLayoutActivity
 import com.lfj.selfstudydemo.aroute.RouterActivity
 import com.lfj.selfstudydemo.coroutine.YoudaoViewModel
+import com.lfj.selfstudydemo.databinding.ActivityMainBinding
 import com.lfj.selfstudydemo.diffUtil.DiffActivity
 import com.lfj.selfstudydemo.jingdongTop.JingDongTopActivity
 import com.lfj.selfstudydemo.layoutmanager.PathLayoutManagerActivity
+import com.lfj.selfstudydemo.linkage.LinkageActivity
 import com.lfj.selfstudydemo.map.ThirdMapActivity
 import com.lfj.selfstudydemo.mvvm.BaseActivity
 import com.lfj.selfstudydemo.mvvm.util.GlobalUtil
@@ -28,6 +31,8 @@ class MainActivity : BaseActivity() {
     override fun layoutView(): Int {
         return R.layout.activity_main
     }
+
+
     val myFun1: (String) -> Unit = fun(value: String) { Yr.d(value) }
     val myFun2: (String) -> Unit = { value -> Yr.d(value) }
     override fun initUI() {
@@ -49,7 +54,8 @@ class MainActivity : BaseActivity() {
             DiffUtils,
             layoutManager,
             ResultLauncher,
-            googleTranslate
+            googleTranslate,
+            双表联动
         ) {
             when (this) {
 
@@ -103,6 +109,9 @@ class MainActivity : BaseActivity() {
                 googleTranslate -> {
                     startActivity(Intent(activity, GoogleTranslateActivity::class.java))
                 }
+                双表联动 -> {
+                    startActivity(Intent(activity, LinkageActivity::class.java))
+                }
             }
         }
         lambdaView.setOnclick {
@@ -115,6 +124,7 @@ class MainActivity : BaseActivity() {
 
         })
         myFun2("skr")
+
     }
 
 

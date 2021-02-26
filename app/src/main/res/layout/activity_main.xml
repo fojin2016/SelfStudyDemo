@@ -142,6 +142,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="谷歌翻译"/>
+            <Button
+                android:id="@+id/双表联动"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="双表联动"/>
         </LinearLayout>
 
 

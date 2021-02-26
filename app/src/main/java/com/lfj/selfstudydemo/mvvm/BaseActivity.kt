@@ -2,12 +2,8 @@ package com.lfj.selfstudydemo.mvvm
 
 import android.app.Activity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.View
-import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
-import com.gyf.immersionbar.ImmersionBar
-import com.lfj.selfstudydemo.R
+import androidx.viewbinding.ViewBinding
 import com.lfj.selfstudydemo.mvvm.util.ActivityCollector
 import java.lang.ref.WeakReference
 
@@ -17,6 +13,8 @@ import java.lang.ref.WeakReference
  */
 abstract class BaseActivity : AppCompatActivity() {
 
+
+    lateinit var viewBinding: ViewBinding
 
     /**
      * 判断当前Activity是否在前台。
@@ -34,8 +32,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         //设置布局
-        setContentView(layoutView())
+        setContentView(viewBinding.root)
 
         activity = this
         activityWR = WeakReference(activity!!)
@@ -58,7 +57,6 @@ abstract class BaseActivity : AppCompatActivity() {
     protected abstract fun initUI()
 
     protected abstract fun initData()
-
 
 
 }

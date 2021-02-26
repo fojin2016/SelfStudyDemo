@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".translate.GoogleTranslateActivity"></activity>
+        <activity android:name=".linkage.LinkageActivity"></activity>
+        <activity android:name=".translate.GoogleTranslateActivity" />
         <activity android:name=".coroutine.CoroutineSimpleActivity" />
         <activity android:name=".coroutine.TranslateActivity" />
         <activity android:name=".ResultContract.SecondActivity" />
